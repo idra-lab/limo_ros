@@ -31,15 +31,15 @@ TebLocalPlannerROS:
     
  # ********************** Carlike robot parameters ********************
  # max_steer_angle_=25 deg; r= wheelbase/tan(max_steer_angle_)=0.42890138
- min_turning_radius: 1.0    # Min turning radius of the carlike robot (compute value using a model or adjust with rqt_reconfigure manually)
- wheelbase: 0.2                 # Wheelbase of our robot
+ min_turning_radius: 0.4    # Min turning radius of the carlike robot (compute value using a model or adjust with rqt_reconfigure manually)
+ wheelbase: 0.1                 # Wheelbase of our robot
  cmd_angle_instead_rotvel: False # stage simulator takes the angle instead of the rotvel as input (twist message)
  # ********************************************************************
  footprint_model: # types: "point", "circular", "two_circles", "line", "polygon"
    type: "line"
    #radius: 0.2 # for type "circular"
    line_start: [0.0, 0.0] # for type "line"
-   line_end: [0.2, 0.0] # for type "line"
+   line_end: [0.3, 0.0] # for type "line"
    #front_offset: 0.2 # for type "two_circles"
    #front_radius: 0.2 # for type "two_circles"
    #rear_offset: 0.2 # for type "two_circles"

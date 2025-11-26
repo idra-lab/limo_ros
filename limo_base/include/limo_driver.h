@@ -90,6 +90,11 @@ private:
     double position_x_ = 0.0;
     double position_y_ = 0.0;
     double theta_ = 0.0;
+    double last_theta_ = 0.0;
+    double delta_theta_ = 0.0;
+    double present_theta_ = 0.0;
+    double real_theta_ = 0.0;
+    double rad = 0.0;
 
     ImuData imu_data_;
     uint8_t motion_mode_;  // current motion type

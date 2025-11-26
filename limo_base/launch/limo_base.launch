@@ -2,7 +2,7 @@
 <launch>
     <!-- ttyTHS1 for NVIDIA nano serial port-->
     <!-- ttyUSB0 for USB serial port -->
-    <arg name="port_name" default="ttyTHS1" />
+    <arg name="port_name" default="ttyTHS0" />
     <arg name="odom_frame" default="odom" />
     <arg name="base_frame" default="base_link" />
     <arg name="use_mcnamu" default="false" />
