@@ -28,7 +28,7 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "limo_driver.h"
+#include <limo_base/limo_driver.h>
 
 int main(int argc, char* argv[]) {
     ros::init(argc, argv, "limo_node");

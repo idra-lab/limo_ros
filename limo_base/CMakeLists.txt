@@ -20,8 +20,11 @@ generate_messages(
 
 include_directories(
   include
-  include/${PROJECT_NAME}
   ${catkin_INCLUDE_DIRS}
+)
+
+catkin_package(
+	CATKIN_DEPENDS roscpp geometry_msgs std_msgs message_runtime
 )
 
 add_executable(limo_base_node
@@ -36,7 +39,12 @@ target_link_libraries(limo_base_node
   ${catkin_LIBRARIES}
 )
 
-install(TARGETS limo_base_node
+add_executable(odom_tf
+	src/odom_tf.cpp)
+target_link_libraries(odom_tf ${catkin_LIBRARIES})
+
+
+install(TARGETS limo_base_node odom_tf
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
