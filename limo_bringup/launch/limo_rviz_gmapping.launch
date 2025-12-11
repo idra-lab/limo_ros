@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- run the rviz node only -->
+    <node pkg="rviz" type="rviz" name="gmapping_rviz" args="-d $(find limo_bringup)/rviz/gmapping.rviz" />
+</launch>

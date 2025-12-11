@@ -1,13 +1,14 @@
 <?xml version="1.0"?>
 <launch>
+    <arg name="rviz" default="false" />
     <!-- use robot pose ekf to provide odometry-->
-    <!--node pkg="robot_pose_ekf" name="robot_pose_ekf" type="robot_pose_ekf">
+    <node pkg="robot_pose_ekf" name="robot_pose_ekf" type="robot_pose_ekf">
         <param name="output_frame" value="odom" />
         <param name="base_footprint_frame" value="base_link"/>
         <remap from="imu_data" to="imu" />
-    </node-->
+    </node>
 
-    <!--node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
+    <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
       <param name="map_update_interval" value="5.0"/>
       <param name="maxUrange" value="16.0"/>
       <param name="sigma" value="0.05"/>
@@ -36,7 +37,8 @@
       <param name="llsamplestep" value="0.01"/>
       <param name="lasamplerange" value="0.005"/>
       <param name="lasamplestep" value="0.005"/>
-    </node-->
+    </node>
 
-    <node pkg="rviz"  type="rviz"  name="gmapping_rviz"  args="-d $(find limo_bringup)/rviz/gmapping.rviz" />
+    <!-- run the rviz node only if the rviz argument is true -->
+    <node if="$(arg rviz)" pkg="rviz" type="rviz" name="gmapping_rviz" args="-d $(find limo_bringup)/rviz/gmapping.rviz" />
 </launch>
