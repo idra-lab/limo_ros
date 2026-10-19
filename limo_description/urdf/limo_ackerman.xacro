@@ -7,9 +7,6 @@
     <xacro:include filename="$(find limo_description)/urdf/limo_steering_hinge.xacro" />
     <xacro:include filename="$(find limo_description)/urdf/limo_ackerman.gazebo" />
 
-    <!-- Variables -->
-    <xacro:property name="M_PI" value="3.14159"/>
-
     <!-- Vehicle Geometries -->
     <xacro:property name="base_x_size" value="0.13" />
     <xacro:property name="base_y_size" value="0.12" />
@@ -78,7 +75,7 @@
     </xacro:limo_left_steering_hinge>
 
     <xacro:limo_right_steering_hinge parent_prefix="base_link" wheel_prefix="right_steering_hinge">
-        <origin xyz="${wheelbase/2} ${-track/2} ${wheel_vertical_offset}" rpy="${M_PI} 0 0" />
+        <origin xyz="${wheelbase/2} ${-track/2} ${wheel_vertical_offset}" rpy="${pi} 0 0" />
     </xacro:limo_right_steering_hinge>
 
 
@@ -131,7 +128,7 @@
         <joint name="rear_right_wheel" type="continuous">
             <parent link="base_link"/>
             <child link="rear_right_wheel_link"/>
-            <origin xyz="${-wheelbase/2} ${-track/2} ${wheel_vertical_offset}" rpy="${M_PI} 0 0" />
+            <origin xyz="${-wheelbase/2} ${-track/2} ${wheel_vertical_offset}" rpy="${pi} 0 0" />
             <axis xyz="0 -1 0"/>
         </joint>
 </robot>
